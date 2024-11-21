@@ -1,0 +1,14 @@
+<h1> Posts </h1>
+
+<% @posts.each do |post| %>
+  <h3><%=post.title %> </h3>
+
+  <p><%=post.body[0...10] + "..." %></p>
+
+  <%= link_to "Edit post", edit_post_path(post) %> |
+  <%= link_to "Delete post", post_path(post), data: {method: :delete, turbo: false, confirm: "Are you sure?"} %> |
+  <%= link_to "Show full post", post_path(post)%>
+
+<% end %>
+<br><br>
+<%= link_to "Add new post", new_post_path %>

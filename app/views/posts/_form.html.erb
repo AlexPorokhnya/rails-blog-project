@@ -1,0 +1,12 @@
+<%= form_with model: @post do |p|%>
+  <div>
+    <%= label = "Post title" %>
+    <%= p.text_field :title, required: true, minlength: 2 %>
+  </div>
+  <div>
+    <%= label = "Content"%>
+    <%= p.text_area :body, required: true, minlength: 10 %>
+  </div>
+
+<%= p.submit "Submit question"%>
+<% end %>
